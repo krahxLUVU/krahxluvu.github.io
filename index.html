@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="naver-site-verification" content="2badb29e70af98d14f4c9bd8202f6711e51eae73" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>바다의 언덕 펜션 - 여수 오션뷰 펜션</title>
+    <style>
+        /* 기본 스타일 초기화 */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Noto Sans KR', sans-serif; }
+        a { text-decoration: none; color: #333; }
+        html { scroll-behavior: smooth; }
+        
+        /* 헤더 / 내비게이션 */
+        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 50px; background: rgba(255,255,255,0.95); position: fixed; width: 100%; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .logo { font-size: 24px; font-weight: bold; color: #0056b3; letter-spacing: -0.5px; }
+        nav a { margin-left: 25px; font-weight: 500; color: #555; transition: 0.2s; }
+        nav a:hover { color: #0056b3; }
+
+        /* 메인 비주얼 (Hero 섹션) */
+        .hero { height: 85vh; background: url('image_fcca24.png') no-repeat center center/cover; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; margin-top: 70px; position: relative; }
+        .hero::after { content: ''; position: absolute; top:0; left:0; right:0; bottom:0; background: rgba(0,0,0,0.25); z-index: 1; }
+        .hero-text { z-index: 2; }
+        .hero h1 { font-size: 46px; font-weight: 700; margin-bottom: 20px; text-shadow: 2px 2px 12px rgba(0,0,0,0.6); word-break: keep-all; }
+        .hero p { font-size: 20px; font-weight: 300; text-shadow: 2px 2px 10px rgba(0,0,0,0.6); }
+
+        /* 공통 컨테이너 */
+        .container { max-width: 1200px; margin: 100px auto; padding: 0 20px; text-align: center; }
+        h2 { font-size: 32px; font-weight: 700; margin-bottom: 40px; color: #222; letter-spacing: -1px; }
+        h2::after { content: ''; display: block; width: 40px; height: 3px; background: #0056b3; margin: 15px auto 0; }
+        
+        /* 펜션 소개 */
+        .about-text { font-size: 18px; color: #666; line-height: 1.8; font-weight: 300; }
+        .about-text strong { color: #222; font-weight: 500; }
+
+        /* 객실 및 전경 갤러리 */
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 40px; margin-top: 50px; }
+        .room-card { border: 1px solid #eee; border-radius: 12px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.04); transition: 0.3s; background: #fff; }
+        .room-card:hover { transform: translateY(-8px); box-shadow: 0 12px 30px rgba(0,0,0,0.08); }
+        .room-card img { width: 100%; height: 320px; object-fit: cover; }
+        .room-info { padding: 30px; text-align: left; }
+        .room-info h3 { font-size: 22px; font-weight: 600; margin-bottom: 12px; color: #222; }
+        .room-info p { color: #666; font-size: 15px; line-height: 1.6; font-weight: 300; }
+        
+        /* 예약 안내 섹션 */
+        .reserve-section { background: #f8faif; padding: 80px 20px; max-width: 100%; text-align: center; border-top: 1px solid #edf2f7; }
+        .reserve-section p { font-size: 16px; color: #555; margin-bottom: 30px; }
+        .btn-reserve { display: inline-block; padding: 16px 45px; background: #03c75a; color: white; font-size: 18px; font-weight: 600; border-radius: 6px; transition: 0.3s; box-shadow: 0 4px 10px rgba(3,199,90,0.2); }
+        .btn-reserve:hover { background: #02b34f; transform: translateY(-2px); }
+        
+        /* 푸터 정보 */
+        footer { background: #222; color: #aaa; padding: 50px 20px; font-size: 14px; line-height: 1.8; border-top: 1px solid #333; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px; }
+        .footer-info { text-align: left; }
+        .footer-info p { margin-bottom: 4px; font-weight: 300; }
+        .footer-info p strong { color: #fff; font-weight: 400; }
+        .copyright { text-align: right; color: #666; font-size: 13px; }
+
+        /* 반응형 대응 (모바일) */
+        @media (max-width: 768px) {
+            header { padding: 15px 20px; }
+            .hero h1 { font-size: 32px; }
+            .hero p { font-size: 16px; }
+            .gallery { grid-template-columns: 1fr; }
+            .room-card img { height: 240px; }
+            .footer-content { flex-direction: column; align-items: flex-start; }
+            .copyright { text-align: left; margin-top: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">바다의 언덕 펜션</div>
+        <nav>
+            <a href="#about">펜션소개</a>
+            <a href="#rooms">객실&전경</a>
+            <a href="#reserve">실시간예약</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>여수 바다와 거북선대교가<br>한눈에 펼쳐지는 곳</h1>
+            <p>아름다운 '바다의 언덕 펜션'에서 잊지 못할 추억을 만들어보세요.</p>
+        </div>
+    </section>
+
+    <section id="about" class="container">
+        <h2>펜션 소개</h2>
+        <p class="about-text">
+            여수 이순신광장로에 위치한 <strong>'바다의 언덕 펜션'</strong>은 탁 트인 오션뷰를 자랑합니다.<br>
+            낮에는 푸른 남해 바다의 청량함을, 밤에는 은은하게 빛나는 돌산대교와 거북선대교의 야경을 감상하실 수 있습니다.<br>
+            사랑하는 가족, 연인과 함께 바람 소리와 파도 소리가 가득한 언덕 위 쉼터에서 완벽한 휴식을 경험해 보세요.
+        </p>
+    </section>
+
+    <section id="rooms" class="container">
+        <h2>객실 및 전경 안내</h2>
+        <div class="gallery">
+            <div class="room-card">
+                <img src="image_fcca08.png" alt="바다의 언덕 펜션 조망">
+                <div class="room-info">
+                    <h3>탁 트인 여수 바다 & 교량 전경</h3>
+                    <p>펜션 앞으로 펼쳐진 시원한 바다와 웅장한 다리가 어우러져 여수만의 낭만적인 감성을 온전히 느낄 수 있는 시그니처 뷰입니다.</p>
+                </div>
+            </div>
+            <div class="room-card">
+                <img src="image_fcca24.png" alt="프라이빗 테라스">
+                <div class="room-info">
+                    <h3>오션뷰 프라이빗 테라스</h3>
+                    <p>탁 트인 개방감을 선사하는 넓은 테라스 테이블 세트가 마련되어 있어, 아름다운 풍경을 바라보며 도란도란 이야기를 나누거나 차 한 잔의 여유를 즐기기에 좋습니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reserve" class="reserve-section">
+        <h2>실시간 예약</h2>
+        <p>가장 빠르고 안전한 객실 예약을 위해 네이버 예약 시스템으로 연결됩니다.</p>
+        <a href="https://booking.naver.com" target="_blank" class="btn-reserve">네이버로 예약하기</a>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <p><strong>펜션명:</strong> 바다의 언덕 펜션 | <strong>대표자:</strong> (부모님 성함을 적어주세요)</p>
+                <p><strong>주소:</strong> 전남 여수시 이순신광장로 135-1</p>
+                <p><strong>문의전화:</strong> 010-7268-0146</p>
+                <p style="margin-top: 10px; font-size: 12px; color: #777;">* 사업자등록번호 및 계좌번호 등은 필요 시 추가 가능합니다.</p>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 바다의 언덕 펜션. All Rights Reserved.</p>
+                <p style="font-size: 11px; margin-top: 5px;">Designed for Parents</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
